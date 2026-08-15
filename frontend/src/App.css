@@ -1,0 +1,311 @@
+/* ---------- Reset & Base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ---------- Header ---------- */
+.header {
+  background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ---------- Dashboard ---------- */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #3a0ca3;
+}
+
+/* ---------- Form Card ---------- */
+.form-card,
+.list-card,
+.filter-bar {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.form-card h2,
+.list-card h2 {
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #333;
+}
+
+.error-text {
+  background: #ffe3e3;
+  color: #c0392b;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.expense-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.form-row input,
+.form-row select {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  border-color: #4361ee;
+}
+
+.form-actions {
+  grid-column: span 2;
+  display: flex;
+  gap: 10px;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary,
+.btn-secondary,
+.btn-edit,
+.btn-delete {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.btn-primary {
+  background: #4361ee;
+  color: white;
+}
+
+.btn-secondary {
+  background: #e9ecef;
+  color: #333;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  opacity: 0.85;
+}
+
+.btn-edit {
+  background: #ffd166;
+  color: #333;
+  margin-right: 6px;
+  padding: 6px 12px;
+}
+
+.btn-delete {
+  background: #ef476f;
+  color: white;
+  padding: 6px 12px;
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
+  opacity: 0.85;
+}
+
+/* ---------- Filter Bar ---------- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: flex-end;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+}
+
+.filter-item label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.filter-item input,
+.filter-item select {
+  padding: 9px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* ---------- Table ---------- */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.expense-table th,
+.expense-table td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.expense-table th {
+  color: #777;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category-badge {
+  background: #edf2fb;
+  color: #3a0ca3;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.empty-text {
+  text-align: center;
+  color: #888;
+  padding: 20px 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .expense-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .expense-table thead {
+    display: none;
+  }
+
+  .expense-table,
+  .expense-table tbody,
+  .expense-table tr,
+  .expense-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .expense-table tr {
+    margin-bottom: 12px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 8px;
+  }
+
+  .expense-table td {
+    border: none;
+    padding: 6px 4px;
+  }
+
+  .expense-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #777;
+    display: inline-block;
+    width: 110px;
+  }
+}
